@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: photography
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.1
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,9 @@ A WordPress plugin specifically for photographers.
 == Description ==
 
 A WordPress plugin specifically for photographers.
+
+Available Shortcodes:
+`[shutter_gallery name="Example Gallery"]`
 
 == Installation ==
 
@@ -37,13 +40,23 @@ If you like my plugins feel free to donate [here](https://www.paypal.com/cgi-bin
 3. Example Gallery w/ Photos
 4. Gallery on Front-end
 5. "Lightbox" enabled
+6. Gallery Shortcode Back-end Example
+7. Gallery Shortcode Front-end Example
 
 == Changelog ==
 
-= 1.0 =
+= 0.2 =
+Enhancement: Added shortcode for adding a gallery
+Enhancement: Cleaned up code for rebuilding images
+
+= 0.1 =
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 0.2 =
+Enhancement: Added shortcode for adding a gallery
+Enhancement: Cleaned up code for rebuilding images
+
+= 0.1 =
 * Initial release

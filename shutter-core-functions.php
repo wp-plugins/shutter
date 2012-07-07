@@ -24,9 +24,6 @@ function shutter_get_template_part( $slug, $name = '' ) {
 		load_template( $template, false );
 }
 
-/**
- * Get other templates (e.g. product attributes) passing attributes and including the file
- */
 function shutter_get_template( $template_name, $args = array(), $template_path = '', $default_path = '' ) {
 	global $wpshutter;
 	

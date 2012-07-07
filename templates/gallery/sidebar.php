@@ -1,1 +1,1 @@
-<?php get_sidebar('shop'); ?>
+<?php get_sidebar('shutter'); ?>

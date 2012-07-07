@@ -5,28 +5,25 @@ function shutter_thumbnail_rebuild_ajax() {
 
 	$action = $_POST["do"];
 	$thumbnails = isset( $_POST['thumbnails'] )? $_POST['thumbnails'] : NULL;
-	$onlyfeatured = isset( $_POST['onlyfeatured'] ) ? $_POST['onlyfeatured'] : 0;
 
 	if ($action == "getlist") {
 
-		if ($onlyfeatured) {
-			/* Get all featured images */
-			$featured_images = $wpdb->get_results( "SELECT meta_value,{$wpdb->posts}.post_title AS title FROM {$wpdb->postmeta}, {$wpdb->posts} WHERE meta_key = '_thumbnail_id' AND {$wpdb->postmeta}.post_id={$wpdb->posts}.ID");
-
-			foreach($featured_images as $image) {
-			    $res[] = array('id' => $image->meta_value, 'title' => $image->title);
-			}
-		} else {
+		$gallery_posts_args = array(
+			'post_type' 		=> 'wps-gallery',
+			'posts_per_page' 	=> '-1'
+		);
+		$gallery_posts = get_posts( $gallery_posts_args );
+		foreach ( $gallery_posts as $post ) {
 			$attachments =& get_children( array(
 				'post_type' => 'attachment',
 				'post_mime_type' => 'image',
 				'numberposts' => -1,
 				'post_status' => null,
-				'post_parent' => null, // any parent
+				'post_parent' => $post->ID,
 				'output' => 'object',
 			) );
 			foreach ( $attachments as $attachment ) {
-			    $res[] = array('id' => $attachment->ID, 'title' => $attachment->post_title);
+				$res[] = array('id' => $attachment->ID, 'title' => $attachment->post_title);
 			}
 		}
 

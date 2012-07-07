@@ -100,7 +100,7 @@ class WPShutter_Settings {
 	
 	// Section Descriptions 
 	function section_shutter_image_sizes_desc() {
-		_e('Note: You will need to regenerate thumbnails for images you have already uploaded. Check out <a target="_blank" href="http://wordpress.org/extend/plugins/regenerate-thumbnails">Regenerate Thumbnails</a>', 'wpshutter');
+		_e('Note: Please rebuild your images if you change these sizes', 'wpshutter');
 	}
 	function section_shutter_css_and_js_desc() {
 		_e('Enable or Disable Shutter CSS/JavaScript for theme and plugin compatibility', 'wpshutter');
@@ -169,7 +169,7 @@ class WPShutter_Settings {
 	
 	// Regenerate Gallery Thumbnails
 	function shutter_regenerate_thumbnails() {
-		$this->shutter_settings_tabs[$this->shutter_regenerate_thumbnails] = __('Regenerate Thumbnails', 'wpshutter');
+		$this->shutter_settings_tabs[$this->shutter_regenerate_thumbnails] = __('Rebuild Images', 'wpshutter');
 	}
 	
 	function shutter_regenerate_thumbnails_content() { ?>
@@ -179,7 +179,7 @@ class WPShutter_Settings {
 		// <![CDATA[
 
 		function setMessage(msg) {
-			jQuery("#message").html(msg);
+			jQuery("#message").html('<p>' + msg + '</p>');
 			jQuery("#message").show();
 		}
 
@@ -195,12 +195,10 @@ class WPShutter_Settings {
 				} );
 			}
 
-			var onlyfeatured = jQuery("#onlyfeatured").attr('checked') ? 1 : 0;
-
 			jQuery.ajax({
 				url: "<?php echo admin_url('admin-ajax.php'); ?>",
 				type: "POST",
-				data: "action=ajax_thumbnail_rebuild&do=getlist&onlyfeatured="+onlyfeatured,
+				data: "action=ajax_thumbnail_rebuild&do=getlist",
 				success: function(result) {
 					var list = eval(result);
 					var curr = 0;
@@ -272,19 +270,15 @@ class WPShutter_Settings {
 				<br/>
 			<?php endforeach;?>
 			</div>
-			<p>
-				<input type="checkbox" id="onlyfeatured" name="onlyfeatured" />
-				<label><?php _e('Only rebuild featured images', 'wpshutter'); ?></label>
-			</p>
 			
 			</div>
 
-			<p><?php _e('Note: Your images will not be deleted.', 'wpshutter'); ?></p>
+			<p><?php _e('Note: Your images will not be deleted', 'wpshutter'); ?></p>
 			
 			<p>
 			<input type="button" onClick="javascript:regenerate();" class="button-primary"
 			       name="ajax_thumbnail_rebuild" id="ajax_thumbnail_rebuild"
-			       value="<?php _e( 'Rebuild All Thumbnails', 'wpshutter' ) ?>" />
+			       value="<?php _e( 'Rebuild Images', 'wpshutter' ) ?>" />
 			</p>
 		</form>
 
@@ -312,6 +306,13 @@ class WPShutter_Settings {
 		$tab = isset( $_GET['tab'] ) ? $_GET['tab'] : $this->shutter_general_settings;
 		?>
 		<div class="wrap">
+			
+			<?php if( isset($_GET['settings-updated']) ) { ?>
+			    <div id="message" class="updated">
+			        <p><strong><?php _e('Your settings have been saved.', 'wpshutter') ?></strong></p>
+			    </div>
+			<?php } ?>
+			
 			<?php $this->plugin_options_tabs(); ?>
 			<?php if ( $tab != $this->shutter_regenerate_thumbnails ) : ?>
 			<form method="post" action="options.php">

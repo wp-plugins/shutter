@@ -3,9 +3,9 @@
 Plugin Name: Shutter
 Plugin URI: http://wpshutter.com/
 Description: A WordPress plugin specifically for photographers.
-Version: 0.1
-Author: PRJKT inc.
-Author URI: http://prjkt.com/
+Version: 0.2
+Author: Scott Basgaard
+Author URI: http://scottbasgaard.com/
 License: GPLv2 or later
 */
 
@@ -106,6 +106,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 		function frontend_includes() {
 			
 			include( 'shutter-hooks.php' );
+			include( 'shortcodes/shortcode-init.php' );
 			
 		}
 	
