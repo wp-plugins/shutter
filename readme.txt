@@ -1,7 +1,7 @@
 === Shutter ===
 Contributors: scottbasgaard
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MFZXL72ETR7H2
-Tags: photography
+Tags: photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing
 Requires at least: 3.0
 Tested up to: 3.4.1
 Stable tag: 0.2
