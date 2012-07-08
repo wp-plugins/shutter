@@ -3,7 +3,7 @@
 Plugin Name: Shutter
 Plugin URI: http://wpshutter.com/
 Description: A WordPress plugin specifically for photographers.
-Version: 0.2
+Version: 0.3
 Author: Scott Basgaard
 Author URI: http://scottbasgaard.com/
 License: GPLv2 or later
@@ -97,7 +97,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 		 */
 		function admin_includes() {
 			include( 'admin/admin-init.php' );
-			include( 'admin/regenerate-thumbnails.php' );
+			include( 'admin/rebuild-images.php' );
 		}
 	
 		/**
@@ -166,6 +166,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 		
 			// Styles
 			if ( ! is_admin() ) $this->init_styles();
+			if ( is_admin() ) $this->init_admin_styles();
 
 			do_action( 'wpshutter_init' );
 		}
@@ -386,6 +387,9 @@ if ( !class_exists( 'WPShutter' ) ) :
 			add_image_size( 'shutter-gallery-thumb', $shutter_gallery_thumb_width, $shutter_gallery_thumb_height, $shutter_gallery_thumb_crop );
 			add_image_size( 'shutter-gallery-lightbox', $shutter_gallery_lightbox_width, $shutter_gallery_lightbox_height, $shutter_gallery_lightbox_crop );
 			
+			// Custom Column Thumb
+			add_image_size( 'shutter-custom-column-thumb', 100, 100, true );
+			
 		}
 	
 		/**
@@ -428,6 +432,12 @@ if ( !class_exists( 'WPShutter' ) ) :
 			$lightbox = ( isset($shutter_general_settings['shutter_disable_lightbox']) && $shutter_general_settings['shutter_disable_lightbox'] == '1' ) ? false : true;
 			if ( $lightbox )
 				wp_enqueue_script( 'fancybox', $this->plugin_url() . '/tools/fancybox/jquery.fancybox.js', array('jquery'), '1.0', $scripts_position );
+		}
+		
+		// Admin Styles
+		function init_admin_styles() {
+			wp_register_style( 'shutter_admin_styles', $this->plugin_url() . '/admin/css/style.css' );
+			wp_enqueue_style( 'shutter_admin_styles' );
 		}
 
 		/**

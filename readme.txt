@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,9 @@ If you like my plugins feel free to donate [here](https://www.paypal.com/cgi-bin
 
 == Changelog ==
 
+= 0.3 =
+Enhancement: Added custom column for gallery featured image
+
 = 0.2 =
 Enhancement: Added shortcode for adding a gallery
 Enhancement: Cleaned up code for rebuilding images
@@ -53,6 +56,9 @@ Enhancement: Cleaned up code for rebuilding images
 * Initial release
 
 == Upgrade Notice ==
+
+= 0.3 =
+Enhancement: Added custom column for gallery featured image
 
 = 0.2 =
 Enhancement: Added shortcode for adding a gallery

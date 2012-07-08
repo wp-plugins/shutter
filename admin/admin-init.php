@@ -45,7 +45,7 @@ class WPShutter_Settings {
 		$this->general_settings = (array) get_option( $this->shutter_general_settings );
 		$this->advanced_settings = (array) get_option( $this->shutter_advanced_settings );
 		
-		// Default Values
+		// Merge Default Values
 		$this->general_settings = array_merge( array(
 			'shutter_gallery_thumb_width' => '',
 			'shutter_gallery_thumb_height' => '',
@@ -58,7 +58,6 @@ class WPShutter_Settings {
 			'shutter_javascript_position' => '0'
 		), $this->general_settings );
 		
-		// Merge Default Values
 		$this->advanced_settings = array_merge( array(
 			'advanced_option' => __('Advanced value', 'wpshutter')
 		), $this->advanced_settings );
@@ -293,7 +292,7 @@ class WPShutter_Settings {
 	 */
 	function add_admin_menus() {
 		global $wpshutter;
-		add_submenu_page( 'edit.php?post_type=wps-gallery', __('Shutter Settings', 'wpshutter'), __('Shutter Settings', 'wpshutter'), 'manage_options', $this->shutter_options_key, array( &$this, 'plugin_options_page' ) );
+		add_submenu_page( 'edit.php?post_type=wps-gallery', __('Shutter Settings', 'wpshutter'), __('Settings', 'wpshutter'), 'manage_options', $this->shutter_options_key, array( &$this, 'plugin_options_page' ) );
 	}
 	
 	/*
@@ -349,5 +348,6 @@ class WPShutter_Settings {
 };
 
 // Initialize the plugin
-add_action( 'plugins_loaded', create_function( '', '$GLOBALS["wpshutter"] = new WPShutter_Settings();' ) );
+add_action( 'plugins_loaded', create_function( '', '$GLOBALS["wpshutter_settings"] = new WPShutter_Settings();' ) );
 
+include_once( 'admin-custom-columns.php' );
