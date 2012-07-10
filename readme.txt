@@ -15,6 +15,7 @@ A WordPress Plugin Specifically for Photographers.
 Shutter is a WordPress plugin designed to cater to photographers.
 
 Features include:
+
 * Creation of galleries with an unlimited amount of photos.
 * Control of image sizes for thumbnails and full size photos.
 * Shortcodes to embed galleries in various post types.
