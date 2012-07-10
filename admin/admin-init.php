@@ -47,11 +47,11 @@ class WPShutter_Settings {
 		
 		// Merge Default Values
 		$this->general_settings = array_merge( array(
-			'shutter_gallery_thumb_width' => '',
-			'shutter_gallery_thumb_height' => '',
+			'shutter_gallery_thumb_width' => '300',
+			'shutter_gallery_thumb_height' => '300',
 			'shutter_gallery_thumb_crop' => '0',
-			'shutter_gallery_lightbox_width' => '',
-			'shutter_gallery_lightbox_height' => '',
+			'shutter_gallery_lightbox_width' => '600',
+			'shutter_gallery_lightbox_height' => '9999',
 			'shutter_gallery_lightbox_crop' => '0',
 			'shutter_disable_css' => '0',
 			'shutter_disable_lightbox' => '0',
@@ -337,7 +337,7 @@ class WPShutter_Settings {
 	 */
 	function plugin_options_tabs() {
 		$current_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : $this->shutter_general_settings;
-		screen_icon('options-general');
+		screen_icon('shutter-options');
 		echo '<h2 class="nav-tab-wrapper">';
 		foreach ( $this->shutter_settings_tabs as $tab_key => $tab_caption ) {
 			$active = $current_tab == $tab_key ? 'nav-tab-active' : '';

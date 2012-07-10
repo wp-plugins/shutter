@@ -1,1 +1,6 @@
 .column-gallery-thumb { width: 105px }
+
+#icon-shutter-options {
+	background: url('../../images/shutter-icon32x32.png') no-repeat;
+	margin: 10px 0 0;
+}

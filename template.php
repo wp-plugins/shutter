@@ -44,6 +44,7 @@ if ( ! function_exists( 'shutter_single_gallery_content' ) ) {
 		global $wp_query;
 		if ( $wp_query->have_posts() ) while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 			<?php do_action( 'shutter_before_single_gallery' ); ?>
+			<?php the_content(); ?>
 			<?php do_action( 'shutter_after_single_gallery' ); ?>
 		<?php endwhile;
 	}

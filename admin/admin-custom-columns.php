@@ -6,6 +6,8 @@ function shutter_gallery_columns( $columns ) {
 	$new_columns['gallery-thumb'] = __('Image', 'woocommerce');
 	unset($columns['cb']);
 	$columns = array_merge( $new_columns, $columns );
+	unset($columns['comments']); // Remove Comments Column
+	$columns['gallery-count'] = __('Count', 'woocommerce');
 	return $columns;
 }
 add_filter('manage_wps-gallery_posts_columns', 'shutter_gallery_columns');
@@ -15,7 +17,7 @@ function shutter_gallery_column( $column ) {
 	global $wpshutter;
 	global $post;
 	
-	if ( $column == 'gallery-thumb') :
+	if ( $column == 'gallery-thumb' ) :
 		
 		$edit_link = get_edit_post_link( $post->ID );
     	
@@ -28,7 +30,12 @@ function shutter_gallery_column( $column ) {
 			echo '<a class="row-title" href="'.$edit_link.'"><img src="'.$wpshutter->plugin_url().'/images/placeholder.png" alt="Placeholder" width="100" height="100" /></a>';
 				
 		endif;
- 	
+		
+	elseif ( $column == 'gallery-count' ) :
+		
+		$attachment_count = count(get_children( array( 'post_parent' => $post->ID ) ));
+ 		echo $attachment_count;
+	
 	endif;
  	
 	return $column;	
