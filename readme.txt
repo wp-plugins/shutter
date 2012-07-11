@@ -1,10 +1,10 @@
 === Shutter ===
 Contributors: scottbasgaard
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MFZXL72ETR7H2
-Tags: photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
+Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.4
+Stable tag: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,12 @@ Features include:
 * and more to come!
 
 Available Shortcodes:
+
+Display Specific Gallery
 `[shutter_gallery name="Example Gallery"]`
+
+Display All Galleries
+`[shutter_galleries]`
 
 All photos you see here are taken by my beautiful and talented wife, [Renate](http://renatebasgaard.com/ "Renate Basgaardd"), who has inspired me to create this plugin.
 
@@ -59,6 +64,11 @@ If you like my plugins feel free to donate [here](https://www.paypal.com/cgi-bin
 
 == Changelog ==
 
+= 0.5 =
+Feature: Added shortcode to display all galleries
+Enhancement: Cleaned up custom columns
+Enhancement: Added additional hooks for add-ons
+
 = 0.4 =
 Updates to Readme.txt for WordPress.org Repository Page
 Bugfix: Content should now appear on a Gallery
@@ -75,6 +85,11 @@ Enhancement: Cleaned up code for rebuilding images
 * Initial release
 
 == Upgrade Notice ==
+
+= 0.5 =
+Feature: Added shortcode to display all galleries
+Enhancement: Cleaned up custom columns
+Enhancement: Added additional hooks for add-ons
 
 = 0.4 =
 Updates to Readme.txt for WordPress.org Repository Page
