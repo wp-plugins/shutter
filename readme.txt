@@ -12,7 +12,7 @@ A WordPress Plugin Specifically for Photographers.
 
 == Description ==
 
-[Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") is a plugin and a suite of add-ons to help easily manage and share your photos. Download it here now for FREE!
+[Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") is a plugin and a suite of add-ons to help easily manage and share your photos.
 
 Make sure to check out more information at [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers").
 
