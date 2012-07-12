@@ -4,3 +4,8 @@
 	background: url('../../images/shutter-icon32x32.png') no-repeat;
 	margin: 10px 0 0;
 }
+
+#icon-edit.icon32-posts-wps-gallery {
+	background: url('../../images/shutter-icon32x32.png') no-repeat;
+	margin: 8px 0 0;
+}

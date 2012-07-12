@@ -1,5 +1,7 @@
 <?php
 
+// Props to 'Viper007Bond' and 'junkcoder' for their plugins
+
 function shutter_thumbnail_rebuild_ajax() {
 	global $wpdb;
 

@@ -50,7 +50,7 @@ function shutter_galleries_shortcode($atts) {
 	
   	ob_start();
 	
-	$the_query = new WP_Query( $args ); ?>
+	$the_query = new WP_Query( apply_filters( 'shutter_galleries_shortcode_args', $args ) ); ?>
 	
 	<ul class="shutter-gallery">
 		
