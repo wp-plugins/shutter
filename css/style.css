@@ -1,0 +1,59 @@
+ul.shutter-gallery {
+    clear: both;
+    list-style: none outside none;
+    margin: 0 0 14px;
+    padding: 0;
+}
+
+ul.shutter-gallery li {
+    clear: left;
+    float: left;
+    list-style: none outside none;
+    margin-bottom: 1.5em;
+    position: relative;
+    text-align: center;
+    width: 48%;
+}
+
+ul.shutter-gallery li.gallery-image {
+    clear: none;
+    margin-right: 3.8%;
+    width: 30.75%;
+}
+
+ul.shutter-gallery li.gallery-image.first {
+    clear: left;
+}
+
+ul.shutter-gallery li.gallery-image:nth-child(2n) {
+    float: left;
+}
+
+ul.shutter-gallery li.gallery-image.last {
+    margin-right: 0;
+}
+
+ul.shutter-gallery li a img {
+    display: block;
+    height: auto;
+    margin-bottom: 0.75em;
+    width: 100%;
+}
+
+ul.shutter-gallery li img {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    padding: 0;
+    -webkit-transition: opacity ease-out 0.1s;
+    -moz-transition: opacity ease-out 0.1s;
+    -o-transition: opacity ease-out 0.1s;
+    transition: opacity ease-out 0.1s;
+}
+
+ul.shutter-gallery li img:hover {
+  opacity: 0.75;
+}
+
+/* Fancybox Fix */
+#fancybox-overlay { z-index: 9999 !important; }
+.fancybox-wrap { z-index: 10000 !important; }
