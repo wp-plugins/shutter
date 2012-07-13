@@ -68,6 +68,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 0.7.1 =
+* Switched title conditional for galleries. Gallery titles will display by default. They can be hidden with [shutter_galleries title="false"]
+
 = 0.7 =
 * Enhancement: Display title in galleries shortcode. Example: [shutter_galleries title="true"]
 
@@ -96,6 +99,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 0.7.1 =
+* Switched title conditional for galleries. Gallery titles will display by default. They can be hidden with [shutter_galleries title="false"]
 
 = 0.7 =
 * Enhancement: Display title in galleries shortcode. Example: [shutter_galleries title="true"]

@@ -44,7 +44,7 @@ function shutter_galleries_shortcode($atts) {
 	global $post;
 	
 	extract(shortcode_atts(array(
-		'title'		=> false
+		'title'		=> "true"
 		), $atts));
 	
  	$args = array(
@@ -78,7 +78,7 @@ function shutter_galleries_shortcode($atts) {
 			
 		printf( '<a href="%s" title="%s" rel="thumbnails" class="%s">%s</a>', esc_attr( get_permalink() ), esc_attr( get_the_title() ), implode(' ', $classes), wp_get_attachment_image( get_post_thumbnail_id($post->ID), apply_filters( 'gallery_thumbnail_size', 'shutter-gallery-thumb' ) ) );
 		
-		if ( $title ) :
+		if ( $title == "true" ) :
 			echo '<a href="'.get_permalink().'" title="'.get_the_title().'">';
 			echo '<h3>' . get_the_title() . '</h3>';
 			echo '</a>';
