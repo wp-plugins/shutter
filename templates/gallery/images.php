@@ -54,5 +54,6 @@
 	}
 ?>
 </ul>
+<div style="clear: both;"></div>
 
 <?php do_action( 'shutter_after_gallery' ); ?>

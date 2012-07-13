@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.7
+Stable tag: 0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,10 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 0.8 =
+* Enhancement: Added additional hooks for add-ons
+* Bugfix: Added needed clear after gallery(s)
+
 = 0.7.1 =
 * Switched title conditional for galleries. Gallery titles will display by default. They can be hidden with [shutter_galleries title="false"]
 
@@ -99,6 +103,10 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 0.8 =
+* Enhancement: Added additional hooks for add-ons
+* Bugfix: Added needed clear after gallery(s)
 
 = 0.7.1 =
 * Switched title conditional for galleries. Gallery titles will display by default. They can be hidden with [shutter_galleries title="false"]

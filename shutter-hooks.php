@@ -17,6 +17,7 @@ add_action( 'get_sidebar', 'shutter_prevent_sidebar_cache' );
 add_action( 'shutter_sidebar', 'shutter_get_sidebar', 10);
 
 // Single Gallery
+add_action( 'shutter_single_gallery_content_inner', 'shutter_do_single_gallery_content_inner' );
 add_action( 'shutter_before_single_gallery', 'shutter_template_single_title', 5);
 add_action( 'shutter_before_single_gallery', 'shutter_show_gallery', 20);
 

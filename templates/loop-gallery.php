@@ -39,3 +39,4 @@
 	}
 ?>
 </ul>
+<div style="clear: both;"></div>

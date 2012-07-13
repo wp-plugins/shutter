@@ -40,13 +40,19 @@ if ( ! function_exists( 'shutter_prevent_sidebar_cache' ) ) {
  * Single Gallery
  */
 if ( ! function_exists( 'shutter_single_gallery_content' ) ) {
-	function gallery_single_content() {
+	function shutter_gallery_single_content() {
 		global $wp_query;
 		if ( $wp_query->have_posts() ) while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-			<?php do_action( 'shutter_before_single_gallery' ); ?>
-			<?php the_content(); ?>
-			<?php do_action( 'shutter_after_single_gallery' ); ?>
+			<?php do_action('shutter_single_gallery_content_inner' ); ?>
 		<?php endwhile;
+	}
+}
+
+if ( ! function_exists( 'shutter_do_single_gallery_content_inner' ) ) {
+	function shutter_do_single_gallery_content_inner() {
+		do_action( 'shutter_before_single_gallery' );
+		the_content();
+		do_action( 'shutter_after_single_gallery' );
 	}
 }
 
