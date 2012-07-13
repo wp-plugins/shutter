@@ -43,6 +43,10 @@ function shutter_galleries_shortcode($atts) {
 	
 	global $post;
 	
+	extract(shortcode_atts(array(
+		'title'		=> false
+		), $atts));
+	
  	$args = array(
 		'post_type' => 'wps-gallery',
 		'posts_per_page' => '-1'
@@ -73,6 +77,12 @@ function shutter_galleries_shortcode($atts) {
 		echo '<li class="gallery-image'.$order.'" >';
 			
 		printf( '<a href="%s" title="%s" rel="thumbnails" class="%s">%s</a>', esc_attr( get_permalink() ), esc_attr( get_the_title() ), implode(' ', $classes), wp_get_attachment_image( get_post_thumbnail_id($post->ID), apply_filters( 'gallery_thumbnail_size', 'shutter-gallery-thumb' ) ) );
+		
+		if ( $title ) :
+			echo '<a href="'.get_permalink().'" title="'.get_the_title().'">';
+			echo '<h3>' . get_the_title() . '</h3>';
+			echo '</a>';
+		endif;
 			
 		echo '</li>';
 			

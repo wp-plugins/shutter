@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.6
+Stable tag: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 0.7 =
+* Enhancement: Display title in galleries shortcode. Example: [shutter_galleries title="true"]
+
 = 0.6 =
 * Updates to Readme.txt for WordPress.org Repository Page
 * Enhancement: Allow add-ons to exclude galleries from loop
@@ -93,6 +96,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 0.7 =
+* Enhancement: Display title in galleries shortcode. Example: [shutter_galleries title="true"]
 
 = 0.6 =
 * Updates to Readme.txt for WordPress.org Repository Page
