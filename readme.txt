@@ -14,7 +14,7 @@ A WordPress Plugin Specifically for Photographers.
 
 [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") is a plugin and a suite of add-ons to help easily manage and share your photos.
 
-Make sure to visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") for more info and add-ons.
+Make sure to visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") for more info and [add-ons](http://wpshutter.com/add-ons/ "Shutter Add-ons").
 
 = Features include: =
 
@@ -41,6 +41,14 @@ All photos you see here are taken by my beautiful and talented wife, [Renate](ht
 3. You're all set. Now start showing off your pictures!
 
 == Frequently Asked Questions ==
+
+= I need help! =
+
+Make sure to check out the documenation for Shutter [here](http://wpshutter.com/documentation/ "Shutter Documentation").
+
+= Do you have any add-ons for Shutter? =
+
+Sure do! Check them out [here](http://wpshutter.com/add-ons/ "Shutter Add-ons").
 
 = Why aren't my images the same size I've chosen in the settings area? =
 
