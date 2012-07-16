@@ -28,7 +28,7 @@ class WPShutter_Settings {
 	function __construct() {
 		add_action( 'init', array( &$this, 'load_settings' ) );
 		add_action( 'admin_init', array( &$this, 'register_general_settings' ) );
-		// add_action( 'admin_init', array( &$this, 'register_advanced_settings' ) );
+		add_action( 'admin_init', array( &$this, 'register_advanced_settings' ) );
 		add_action( 'admin_init', array( &$this, 'shutter_regenerate_thumbnails' ) );
 		add_action( 'admin_menu', array( &$this, 'add_admin_menus' ) );
 	}
@@ -59,7 +59,7 @@ class WPShutter_Settings {
 		), $this->general_settings );
 		
 		$this->advanced_settings = array_merge( array(
-			'advanced_option' => __('Advanced value', 'wpshutter')
+			'presstrends_option' => '0'
 		), $this->advanced_settings );
 	}
 	
@@ -104,7 +104,7 @@ class WPShutter_Settings {
 	function section_shutter_css_and_js_desc() {
 		_e('Enable or Disable Shutter CSS/JavaScript for theme and plugin compatibility', 'wpshutter');
 	}
-	function section_advanced_desc() { _e('Advanced section description goes here.', 'wpshutter'); }
+	function section_advanced_desc() { _e('', 'wpshutter'); }
 	function section_regenerate_thumbnails_desc() { _e('', 'wpshutter'); }
 	
 	// CSS Field
@@ -155,14 +155,16 @@ class WPShutter_Settings {
 	function register_advanced_settings() {
 		$this->shutter_settings_tabs[$this->shutter_advanced_settings] = __('Advanced', 'wpshutter');
 		register_setting( $this->shutter_advanced_settings, $this->shutter_advanced_settings );
-		add_settings_section( 'section_advanced', __('Advanced Plugin Settings', 'wpshutter'), array( &$this, 'section_advanced_desc' ), $this->shutter_advanced_settings );
-		add_settings_field( 'advanced_option', __('An Advanced Option', 'wpshutter'), array( &$this, 'field_advanced_option' ), $this->shutter_advanced_settings, 'section_advanced' );
+		add_settings_section( 'section_advanced', __('Advanced Shutter Settings', 'wpshutter'), array( &$this, 'section_advanced_desc' ), $this->shutter_advanced_settings );
+		add_settings_field( 'presstrends_option', __('Opt-out of PressTrends Tracking', 'wpshutter'), array( &$this, 'field_presstrends_option' ), $this->shutter_advanced_settings, 'section_advanced' );
 	}
 	
-	// Advanced Settings Field
-	function field_advanced_option() {
+	// PressTrends
+	function field_presstrends_option() {
 		?>
-		<input type="text" name="<?php echo $this->shutter_advanced_settings; ?>[advanced_option]" value="<?php echo esc_attr( $this->advanced_settings['advanced_option'] ); ?>" />
+		<input type="checkbox" <?php if ( 1 == $this->advanced_settings['presstrends_option'] ) echo 'checked="checked"'; ?> value="1" name="<?php echo $this->shutter_advanced_settings; ?>[presstrends_option]" />
+		<p class="description"><a title="PressTrends" href="www.presstrends.io/privacy/" target="_blank"><?php _e('For more information, please view the PressTrends privacy policy.', 'wpshutter'); ?></a></p>
+		
 		<?php
 	}
 	

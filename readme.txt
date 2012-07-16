@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.8.1
+Stable tag: 0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,6 +76,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 0.9 =
+* Integrated PressTrends (Opt-out available)
+
 = 0.8.1 =
 * Updated strings in localization files for translations
 
@@ -114,6 +117,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 0.9 =
+* Integrated PressTrends (Opt-out available)
 
 = 0.8.1 =
 * Updated strings in localization files for translations
