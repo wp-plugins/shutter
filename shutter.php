@@ -3,7 +3,7 @@
 Plugin Name: Shutter
 Plugin URI: http://wpshutter.com/
 Description: A WordPress plugin specifically for photographers.
-Version: 0.9
+Version: 1.0
 Author: Scott Basgaard
 Author URI: http://scottbasgaard.com/
 License: GPLv2 or later

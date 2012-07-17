@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Shutter v0.8\n"
+"Project-Id-Version: Shutter v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-07-15 13:02:02+0000\n"
+"PO-Revision-Date: 2012-07-17 20:56:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,6 @@ msgstr ""
 #: admin/admin-custom-columns.php:17
 #@ wpshutter
 msgid "# Photos"
-msgstr ""
-
-#: admin/admin-init.php:62
-#@ wpshutter
-msgid "Advanced value"
 msgstr ""
 
 #: admin/admin-init.php:72
@@ -74,11 +69,6 @@ msgstr ""
 msgid "Enable or Disable Shutter CSS/JavaScript for theme and plugin compatibility"
 msgstr ""
 
-#: admin/admin-init.php:107
-#@ wpshutter
-msgid "Advanced section description goes here."
-msgstr ""
-
 #: admin/admin-init.php:114
 #@ wpshutter
 msgid "Disable CSS styles"
@@ -117,172 +107,202 @@ msgstr ""
 msgid "Advanced"
 msgstr ""
 
-#: admin/admin-init.php:158
-#@ wpshutter
-msgid "Advanced Plugin Settings"
-msgstr ""
-
-#: admin/admin-init.php:159
-#@ wpshutter
-msgid "An Advanced Option"
-msgstr ""
-
-#: admin/admin-init.php:171
-#: admin/admin-init.php:280
+#: admin/admin-init.php:173
+#: admin/admin-init.php:282
 #@ wpshutter
 msgid "Rebuild Images"
 msgstr ""
 
-#: admin/admin-init.php:187
+#: admin/admin-init.php:189
 #@ wpshutter
 msgid "Reading attachments..."
 msgstr ""
 
-#: admin/admin-init.php:206
+#: admin/admin-init.php:208
 #@ wpshutter
 msgid "No attachments found."
 msgstr ""
 
-#: admin/admin-init.php:214
+#: admin/admin-init.php:216
 #@ wpshutter
 msgid "Done."
 msgstr ""
 
-#: admin/admin-init.php:217
+#: admin/admin-init.php:219
 #, php-format
 #@ wpshutter
 msgid "\"Rebuilding \" + %s + \" of \" + %s + \" (\" + %s + \")...\""
 msgstr ""
 
-#: admin/admin-init.php:236
+#: admin/admin-init.php:238
 #@ wpshutter
 msgid "Error"
 msgstr ""
 
-#: admin/admin-init.php:256
+#: admin/admin-init.php:258
 #@ wpshutter
 msgid "Select which thumbnails you want to rebuild"
 msgstr ""
 
-#: admin/admin-init.php:257
+#: admin/admin-init.php:259
 #@ wpshutter
 msgid "Toggle all"
 msgstr ""
 
-#: admin/admin-init.php:267
+#: admin/admin-init.php:269
 #@ wpshutter
 msgid "cropped"
 msgstr ""
 
-#: admin/admin-init.php:275
+#: admin/admin-init.php:277
 #@ wpshutter
 msgid "Note: Your images will not be deleted"
 msgstr ""
 
-#: admin/admin-init.php:284
+#: admin/admin-init.php:286
 #@ wpshutter
 msgid "Last image"
 msgstr ""
 
-#: admin/admin-init.php:295
+#: admin/admin-init.php:297
 #@ wpshutter
 msgid "Shutter Settings"
 msgstr ""
 
-#: admin/admin-init.php:295
+#: admin/admin-init.php:297
 #@ wpshutter
 msgid "Settings"
 msgstr ""
 
-#: admin/admin-init.php:311
+#: admin/admin-init.php:313
 #@ wpshutter
 msgid "Your settings have been saved."
 msgstr ""
 
-#: shutter.php:270
+#: shutter.php:274
 #@ wpshutter
 msgid "Gallery Viewer"
 msgstr ""
 
-#: shutter.php:277
+#: shutter.php:281
 #@ wpshutter
 msgid "Gallery Manager"
 msgstr ""
 
-#: shutter.php:326
+#: shutter.php:330
 #@ wpshutter
 msgid "Shutter"
 msgstr ""
 
-#: shutter.php:327
-#: shutter.php:328
+#: shutter.php:331
+#: shutter.php:332
 #@ wpshutter
 msgid "Galleries"
 msgstr ""
 
-#: shutter.php:329
+#: shutter.php:333
 #@ wpshutter
 msgid "Gallery"
 msgstr ""
 
-#: shutter.php:330
+#: shutter.php:334
 #@ wpshutter
 msgid "Add Gallery"
 msgstr ""
 
-#: shutter.php:331
+#: shutter.php:335
 #@ wpshutter
 msgid "Add New Gallery"
 msgstr ""
 
-#: shutter.php:332
+#: shutter.php:336
 #@ wpshutter
 msgid "Edit"
 msgstr ""
 
-#: shutter.php:333
+#: shutter.php:337
 #@ wpshutter
 msgid "Edit Gallery"
 msgstr ""
 
-#: shutter.php:334
+#: shutter.php:338
 #@ wpshutter
 msgid "New Gallery"
 msgstr ""
 
-#: shutter.php:335
-#: shutter.php:336
+#: shutter.php:339
+#: shutter.php:340
 #@ wpshutter
 msgid "View Gallery"
 msgstr ""
 
-#: shutter.php:337
+#: shutter.php:341
 #@ wpshutter
 msgid "Search Galleries"
 msgstr ""
 
-#: shutter.php:338
+#: shutter.php:342
 #@ wpshutter
 msgid "No Galleries found"
 msgstr ""
 
-#: shutter.php:339
+#: shutter.php:343
 #@ wpshutter
 msgid "No Galleries found in trash"
 msgstr ""
 
-#: shutter.php:340
+#: shutter.php:344
 #@ wpshutter
 msgid "Parent Gallery"
 msgstr ""
 
-#: shutter.php:342
+#: shutter.php:346
 #@ wpshutter
 msgid "This is where you can add new galleries with photos."
 msgstr ""
 
-#: shutter.php:615
+#: shutter.php:619
 #@ wpshutter
 msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: admin/admin-init.php:158
+#@ wpshutter
+msgid "Advanced Shutter Settings"
+msgstr ""
+
+#: admin/admin-init.php:159
+#@ wpshutter
+msgid "Opt-out of PressTrends Tracking"
+msgstr ""
+
+#: admin/admin-init.php:166
+#@ wpshutter
+msgid "For more information, please view the PressTrends privacy policy."
+msgstr ""
+
+#: admin/admin-meta-boxes.php:21
+#@ wpshutter
+msgid "Gallery Options"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:38
+#@ wpshutter
+msgid "Image Title:"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:40
+#@ wpshutter
+msgid "None"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:41
+#@ wpshutter
+msgid "Filename"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:42
+#@ wpshutter
+msgid "Title/Alt"
 msgstr ""
 

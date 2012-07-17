@@ -54,6 +54,21 @@ ul.shutter-gallery li img:hover {
   opacity: 0.75;
 }
 
-/* Fancybox Fix */
+.shutter-attachment-meta {
+	display: none;
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Fancybox Changes */
 #fancybox-overlay { z-index: 9999 !important; }
 .fancybox-wrap { z-index: 10000 !important; }
+.fancybox-nav { width: 60px; }
+.fancybox-nav span { visibility: visible; }
+.fancybox-next { right: -60px !important; }
+.fancybox-prev { left: -60px !important }
+
+.fancybox-close {
+    top: 0;
+    right: 0;
+}

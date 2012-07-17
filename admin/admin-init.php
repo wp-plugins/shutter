@@ -353,3 +353,4 @@ class WPShutter_Settings {
 add_action( 'plugins_loaded', create_function( '', '$GLOBALS["wpshutter_settings"] = new WPShutter_Settings();' ) );
 
 include_once( 'admin-custom-columns.php' );
+include_once( 'admin-meta-boxes.php' );
