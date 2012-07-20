@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.4
 Tested up to: 3.4.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,7 @@ Make sure to visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin
 
 = Features include: =
 
+* Fully Responsive (Dependent on Theme)
 * Creation of galleries with an unlimited amount of photos.
 * Control of image sizes for thumbnails and full size photos.
 * Shortcodes to embed galleries in various post types.
@@ -73,8 +74,12 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 5. Gallery with "Lightbox" Feature Enabled
 6. Gallery Shortcode Back-end Example
 7. Gallery Shortcode Front-end Example
+8. Fully Responsive (Dependent on Theme)
 
 == Changelog ==
+
+= 1.0.1 =
+* Updates to readme.txt and screenshots
 
 = 1.0 =
 * Shutter is Officially Launched and No Longer "Beta"
@@ -123,6 +128,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Updates to readme.txt and screenshots
 
 = 1.0 =
 * Shutter is Officially Launched and No Longer "Beta"
