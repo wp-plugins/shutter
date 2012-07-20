@@ -1,0 +1,308 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Shutter v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-07-17 20:56:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: admin/admin-custom-columns.php:17
+#@ wpshutter
+msgid "# Photos"
+msgstr ""
+
+#: admin/admin-init.php:72
+#@ wpshutter
+msgid "General"
+msgstr ""
+
+#: admin/admin-init.php:79
+#@ wpshutter
+msgid "CSS & JavaScript"
+msgstr ""
+
+#: admin/admin-init.php:82
+#@ wpshutter
+msgid "CSS"
+msgstr ""
+
+#: admin/admin-init.php:85
+#@ wpshutter
+msgid "JS"
+msgstr ""
+
+#: admin/admin-init.php:90
+#@ wpshutter
+msgid "Image Sizes"
+msgstr ""
+
+#: admin/admin-init.php:93
+#@ wpshutter
+msgid "Gallery Thumbnail"
+msgstr ""
+
+#: admin/admin-init.php:96
+#@ wpshutter
+msgid "Gallery Lightbox"
+msgstr ""
+
+#: admin/admin-init.php:102
+#@ wpshutter
+msgid "Note: Please rebuild your images if you change these sizes"
+msgstr ""
+
+#: admin/admin-init.php:105
+#@ wpshutter
+msgid "Enable or Disable Shutter CSS/JavaScript for theme and plugin compatibility"
+msgstr ""
+
+#: admin/admin-init.php:114
+#@ wpshutter
+msgid "Disable CSS styles"
+msgstr ""
+
+#: admin/admin-init.php:122
+#@ wpshutter
+msgid "Disable Lightbox"
+msgstr ""
+
+#: admin/admin-init.php:124
+#@ wpshutter
+msgid "Output JavaScript in the footer"
+msgstr ""
+
+#: admin/admin-init.php:131
+#: admin/admin-init.php:144
+#@ wpshutter
+msgid "Width"
+msgstr ""
+
+#: admin/admin-init.php:133
+#: admin/admin-init.php:146
+#@ wpshutter
+msgid "Height"
+msgstr ""
+
+#: admin/admin-init.php:137
+#: admin/admin-init.php:150
+#@ wpshutter
+msgid "Hard Crop"
+msgstr ""
+
+#: admin/admin-init.php:156
+#@ wpshutter
+msgid "Advanced"
+msgstr ""
+
+#: admin/admin-init.php:173
+#: admin/admin-init.php:282
+#@ wpshutter
+msgid "Rebuild Images"
+msgstr ""
+
+#: admin/admin-init.php:189
+#@ wpshutter
+msgid "Reading attachments..."
+msgstr ""
+
+#: admin/admin-init.php:208
+#@ wpshutter
+msgid "No attachments found."
+msgstr ""
+
+#: admin/admin-init.php:216
+#@ wpshutter
+msgid "Done."
+msgstr ""
+
+#: admin/admin-init.php:219
+#, php-format
+#@ wpshutter
+msgid "\"Rebuilding \" + %s + \" of \" + %s + \" (\" + %s + \")...\""
+msgstr ""
+
+#: admin/admin-init.php:238
+#@ wpshutter
+msgid "Error"
+msgstr ""
+
+#: admin/admin-init.php:258
+#@ wpshutter
+msgid "Select which thumbnails you want to rebuild"
+msgstr ""
+
+#: admin/admin-init.php:259
+#@ wpshutter
+msgid "Toggle all"
+msgstr ""
+
+#: admin/admin-init.php:269
+#@ wpshutter
+msgid "cropped"
+msgstr ""
+
+#: admin/admin-init.php:277
+#@ wpshutter
+msgid "Note: Your images will not be deleted"
+msgstr ""
+
+#: admin/admin-init.php:286
+#@ wpshutter
+msgid "Last image"
+msgstr ""
+
+#: admin/admin-init.php:297
+#@ wpshutter
+msgid "Shutter Settings"
+msgstr ""
+
+#: admin/admin-init.php:297
+#@ wpshutter
+msgid "Settings"
+msgstr ""
+
+#: admin/admin-init.php:313
+#@ wpshutter
+msgid "Your settings have been saved."
+msgstr ""
+
+#: shutter.php:274
+#@ wpshutter
+msgid "Gallery Viewer"
+msgstr ""
+
+#: shutter.php:281
+#@ wpshutter
+msgid "Gallery Manager"
+msgstr ""
+
+#: shutter.php:330
+#@ wpshutter
+msgid "Shutter"
+msgstr ""
+
+#: shutter.php:331
+#: shutter.php:332
+#@ wpshutter
+msgid "Galleries"
+msgstr ""
+
+#: shutter.php:333
+#@ wpshutter
+msgid "Gallery"
+msgstr ""
+
+#: shutter.php:334
+#@ wpshutter
+msgid "Add Gallery"
+msgstr ""
+
+#: shutter.php:335
+#@ wpshutter
+msgid "Add New Gallery"
+msgstr ""
+
+#: shutter.php:336
+#@ wpshutter
+msgid "Edit"
+msgstr ""
+
+#: shutter.php:337
+#@ wpshutter
+msgid "Edit Gallery"
+msgstr ""
+
+#: shutter.php:338
+#@ wpshutter
+msgid "New Gallery"
+msgstr ""
+
+#: shutter.php:339
+#: shutter.php:340
+#@ wpshutter
+msgid "View Gallery"
+msgstr ""
+
+#: shutter.php:341
+#@ wpshutter
+msgid "Search Galleries"
+msgstr ""
+
+#: shutter.php:342
+#@ wpshutter
+msgid "No Galleries found"
+msgstr ""
+
+#: shutter.php:343
+#@ wpshutter
+msgid "No Galleries found in trash"
+msgstr ""
+
+#: shutter.php:344
+#@ wpshutter
+msgid "Parent Gallery"
+msgstr ""
+
+#: shutter.php:346
+#@ wpshutter
+msgid "This is where you can add new galleries with photos."
+msgstr ""
+
+#: shutter.php:619
+#@ wpshutter
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: admin/admin-init.php:158
+#@ wpshutter
+msgid "Advanced Shutter Settings"
+msgstr ""
+
+#: admin/admin-init.php:159
+#@ wpshutter
+msgid "Opt-out of PressTrends Tracking"
+msgstr ""
+
+#: admin/admin-init.php:166
+#@ wpshutter
+msgid "For more information, please view the PressTrends privacy policy."
+msgstr ""
+
+#: admin/admin-meta-boxes.php:21
+#@ wpshutter
+msgid "Gallery Options"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:38
+#@ wpshutter
+msgid "Image Title:"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:40
+#@ wpshutter
+msgid "None"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:41
+#@ wpshutter
+msgid "Filename"
+msgstr ""
+
+#: admin/admin-meta-boxes.php:42
+#@ wpshutter
+msgid "Title/Alt"
+msgstr ""
+
