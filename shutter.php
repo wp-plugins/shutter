@@ -3,7 +3,7 @@
 Plugin Name: Shutter
 Plugin URI: http://wpshutter.com/
 Description: A WordPress plugin specifically for photographers.
-Version: 1.0.1
+Version: 1.0.2
 Author: Scott Basgaard
 Author URI: http://scottbasgaard.com/
 License: GPLv2 or later
@@ -37,7 +37,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 	class WPShutter {
 	
 		// Version
-		var $version = '1.0.1';
+		var $version = '1.0.2';
 	
 		// URLS
 		var $plugin_url;
@@ -428,16 +428,18 @@ if ( !class_exists( 'WPShutter' ) ) :
 			
 			$shutter_general_settings = get_option('shutter_general_settings');
 			
-			$scripts_position = ( isset($shutter_general_settings['shutter_javascript_position']) && $shutter_general_settings['shutter_javascript_position'] == '1' ) ? true : false;
-			
-			$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-			wp_enqueue_script( 'shutter', $this->plugin_url() . '/js/global'.$suffix.'.js', array('jquery'), '1.0', $scripts_position );
-			
+			$scripts_position = ( isset($shutter_general_settings['shutter_javascript_position']) && $shutter_general_settings['shutter_javascript_position'] == '1' ) ? true : false;			
 			
 			// Lightbox
 			$lightbox = ( isset($shutter_general_settings['shutter_disable_lightbox']) && $shutter_general_settings['shutter_disable_lightbox'] == '1' ) ? false : true;
-			if ( $lightbox )
+			
+			if ( $lightbox ) :
+				
+				$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+				wp_enqueue_script( 'shutter', $this->plugin_url() . '/js/global'.$suffix.'.js', array('jquery'), '1.0', $scripts_position );
 				wp_enqueue_script( 'fancybox', $this->plugin_url() . '/tools/fancybox/jquery.fancybox.js', array('jquery'), '1.0', $scripts_position );
+				
+			endif;
 		}
 		
 		// Admin Styles
