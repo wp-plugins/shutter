@@ -37,7 +37,7 @@ function shutter_thumbnail_rebuild_ajax() {
 
 		if ( FALSE !== $fullsizepath && @file_exists($fullsizepath) ) {
 			set_time_limit( 30 );
-			wp_update_attachment_metadata( $id, wp_generate_attachment_metadata_custom( $id, $fullsizepath, $thumbnails ) );
+			wp_update_attachment_metadata( $id, shutter_generate_attachment_metadata( $id, $fullsizepath, $thumbnails ) );
 		}
 
 		die( wp_get_attachment_thumb_url( $id ));
@@ -83,7 +83,7 @@ function shutter_thumbnail_rebuild_get_sizes() {
  * @param string $file Filepath of the Attached image.
  * @return mixed Metadata for attachment.
  */
-function wp_generate_attachment_metadata_custom( $attachment_id, $file, $thumbnails = NULL ) {
+function shutter_generate_attachment_metadata( $attachment_id, $file, $thumbnails = NULL ) {
 	$attachment = get_post( $attachment_id );
 
 	$metadata = array();

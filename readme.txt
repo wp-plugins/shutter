@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.4
 Tested up to: 3.4.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 1.0.3 =
+* Bugfix: Fixed conflict with AJAX Thumbnail Rebuild. Props: Krogsgard
+
 = 1.0.2 =
 * Bugfix: Don't include JS if lightbox is disabled
 
@@ -131,6 +134,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+* Bugfix: Fixed conflict with AJAX Thumbnail Rebuild. Props: Krogsgard
 
 = 1.0.2 =
 * Bugfix: Don't include JS if lightbox is disabled
