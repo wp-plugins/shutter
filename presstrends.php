@@ -1,7 +1,7 @@
 <?php
 
 // Start of Presstrends Magic
-function presstrends_plugin() {
+function shutter_presstrends() {
 
 // PressTrends Account API Key
 $api_key = 'w2z4t0tinhxd3l1z1q7f0iqkqnwjxjteyza2';
@@ -51,4 +51,4 @@ set_transient('presstrends_data', $data, 60*60*24);}
 // PressTrends WordPress Action
 $shutter_advanced_settings = get_option('shutter_advanced_settings');
 if ( !isset($shutter_advanced_settings['presstrends_option']) || $shutter_advanced_settings['presstrends_option'] != '1' )
-	add_action('admin_init', 'presstrends_plugin');
+	add_action('admin_init', 'shutter_presstrends');
