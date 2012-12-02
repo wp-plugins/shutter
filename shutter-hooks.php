@@ -5,7 +5,7 @@
  * Action/filter hooks used for Shutter function and templates
  *
  */
- 
+
 if ( !is_admin() || defined('DOING_AJAX') ) :
 
 // Wrappers

@@ -3,7 +3,7 @@
 Plugin Name: Shutter
 Plugin URI: http://wpshutter.com/
 Description: A WordPress plugin specifically for photographers.
-Version: 1.0.4
+Version: 1.0.5
 Author: Scott Basgaard
 Author URI: http://scottbasgaard.com/
 License: GPLv2 or later
@@ -28,29 +28,29 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 if ( !defined( 'ABSPATH' ) ) exit; // Lock It Down
 
 if ( !class_exists( 'WPShutter' ) ) :
-	
+
 	/**
 	 * Main Shutter Class
 	 *
 	 * @since Shutter 0.1
 	 */
 	class WPShutter {
-	
+
 		// Version
 		var $version = '1.0.4';
-	
+
 		// URLS
 		var $plugin_url;
 		var $plugin_path;
 		var $template_url;
-	
+
 		// Errors & Messages
 		var $errors = array(); // Stores Errors
 		var $messages = array(); // Stores Messages
 
 		// Body Classes
 		private $_body_classes = array();
-	
+
 		/**
 		 * Shutter Constructor
 		 */
@@ -58,21 +58,21 @@ if ( !class_exists( 'WPShutter' ) ) :
 
 			// PHP Session
 			if ( ! session_id() ) session_start();
-		
+
 			// Define Version
 			define( 'WPSHUTTER_VERSION', $this->version );
 
 			// Require Files
 			$this->includes();
-		
+
 			// Install
 			if ( is_admin() && !defined('DOING_AJAX') ) $this->install();
-		
+
 			// Actions
 			add_action( 'init', array( &$this, 'init' ), 0 );
 			add_action( 'init', array( &$this, 'include_template_functions' ), 25 );
 			add_action( 'after_setup_theme', array( &$this, 'compatibility' ) );
-		
+
 			// We Are Loaded
 			do_action( 'wpshutter_loaded' );
 		}
@@ -81,21 +81,21 @@ if ( !class_exists( 'WPShutter' ) ) :
 		 * Required Files
 		 */
 		function includes() {
-			
+
 			// Backend Only
 			if ( is_admin() ) $this->admin_includes();
 
 			// Frontend Only
 			if ( ! is_admin() || defined('DOING_AJAX') ) $this->frontend_includes();
-			
+
 			// Core Shutter Functions
 			include( 'shutter-core-functions.php' );
-			
+
 			// PressTrends Tracking
 			include ( 'presstrends.php' );
-			
+
 		}
-	
+
 		/**
 		 * Backend Only
 		 */
@@ -103,34 +103,34 @@ if ( !class_exists( 'WPShutter' ) ) :
 			include( 'admin/admin-init.php' );
 			include( 'admin/rebuild-images.php' );
 		}
-	
+
 		/**
 		 * Frontend Only
 		 */
 		function frontend_includes() {
-			
+
 			include( 'shutter-hooks.php' );
 			include( 'shortcodes/shortcode-init.php' );
-			
+
 		}
-	
+
 		/**
 		 * Template Functions
 		 */
 		function include_template_functions() {
 			include( 'template.php' );
 		}
-	
+
 		/**
 		 * Install
 		 */
 		function install() {
 			// register_activation_hook( __FILE__, 'activate_wpshutter' );
 			// register_activation_hook( __FILE__, 'flush_rewrite_rules' );
-			if ( get_option('wpshutter_db_version') != $this->version ) 
+			if ( get_option('wpshutter_db_version') != $this->version )
 				add_action( 'init', 'install_wpshutter', 1 );
 		}
-	
+
 		/**
 		 * Initialize
 		 */
@@ -143,7 +143,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 
 			// Frontend Only
 			if ( ! is_admin() || defined('DOING_AJAX') ) {
-	
+
 				// Load Messages
 				$this->load_messages();
 
@@ -155,26 +155,26 @@ if ( !class_exists( 'WPShutter' ) ) :
 				add_action( 'wp_head', array(&$this, 'wp_head') );
 				add_filter( 'body_class', array(&$this, 'output_body_class') );
 			}
-			
+
 			// Register Globals
 			$this->register_globals();
 
 			// User Roles
 			$this->init_user_roles();
-		
+
 			// Taxonomies
 			$this->init_taxonomy();
-		
+
 			// Image Sizes
 			$this->init_image_sizes();
-		
+
 			// Styles
 			if ( ! is_admin() ) $this->init_styles();
 			if ( is_admin() ) $this->init_admin_styles();
 
 			do_action( 'wpshutter_init' );
 		}
-	
+
 		/**
 		 * Localization
 		 */
@@ -182,30 +182,30 @@ if ( !class_exists( 'WPShutter' ) ) :
 			$locale = apply_filters( 'plugin_locale', get_locale(), 'wpshutter' );
 			load_plugin_textdomain( 'wpshutter', false, dirname( plugin_basename( __FILE__ ) ).'/languages' );
 		}
-	
+
 		/**
 		 * Template Loader
 		 */
 		function template_loader( $template ) {
-			
+
 			do_action( 'shutter_template_loader_before' );
-		
+
 			$find 	= array( 'shutter.php' );
 			$file 	= '';
-		
+
 			if ( is_single() && get_post_type() == 'wps-gallery' ) {
-			
+
 				$file 	= 'single-wps-gallery.php';
 				$find[] = $file;
 				$find[] = $this->template_url . $file;
 
 			}
-		
+
 			if ( $file ) {
 				$template = locate_template( $find );
 				if ( ! $template ) $template = $this->plugin_path() . '/templates/' . $file;
 			}
-		
+
 			return $template;
 		}
 
@@ -214,12 +214,12 @@ if ( !class_exists( 'WPShutter' ) ) :
 		 */
 		function register_globals() {
 		}
-	
+
 		/**
 		 * Add Theme Compatibility
 		 */
 		function compatibility() {
-			
+
 			// Post Thumbnail Support
 			if ( ! current_theme_supports( 'post-thumbnails' ) ) :
 				add_theme_support( 'post-thumbnails' );
@@ -228,29 +228,29 @@ if ( !class_exists( 'WPShutter' ) ) :
 			else :
 				add_post_type_support( 'wps-gallery', 'thumbnail' );
 			endif;
-		
+
 			// IIS
 			if ( ! isset($_SERVER['REQUEST_URI'] ) ) {
 				$_SERVER['REQUEST_URI'] = substr( $_SERVER['PHP_SELF'], 1 );
-				if ( isset( $_SERVER['QUERY_STRING'] ) ) 
+				if ( isset( $_SERVER['QUERY_STRING'] ) )
 					$_SERVER['REQUEST_URI'].='?'.$_SERVER['QUERY_STRING'];
 			}
-		
+
 			// NGINX Proxy
 			if ( ! isset( $_SERVER['REMOTE_ADDR'] ) && isset( $_SERVER['HTTP_REMOTE_ADDR'] ) )
 				$_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_REMOTE_ADDR'];
 			if ( ! isset( $_SERVER['HTTPS'] ) && ! empty( $_SERVER['HTTP_HTTPS'] ) )
 				$_SERVER['HTTPS'] = $_SERVER['HTTP_HTTPS'];
-			
+
 		}
-	
+
 		/**
 		 * Output Shutter Details
 		 */
 		function generator() {
 			echo "\n\n" . '<!-- WPShutter Version -->' . "\n" . '<meta name="generator" content="WPShutter ' . $this->version . '" />' . "\n\n";
 		}
-	
+
 		/**
 		 * Add Body Classes
 		 */
@@ -259,24 +259,24 @@ if ( !class_exists( 'WPShutter' ) ) :
 			$this->add_body_class( "theme-{$theme_name}" );
 			// if ( is_wpshutter() ) $this->add_body_class('wpshutter');
 		}
-		
+
 		/**
 		 * User Roles
 		 */
 		function init_user_roles() {
 			global $wp_roles;
-	
-			if ( class_exists('WP_Roles') ) if ( ! isset( $wp_roles ) ) $wp_roles = new WP_Roles();	
-		
+
+			if ( class_exists('WP_Roles') ) if ( ! isset( $wp_roles ) ) $wp_roles = new WP_Roles();
+
 			if ( is_object($wp_roles) ) {
-			
+
 				// Gallery Viewer
 				add_role( 'gallery_viewer', __('Gallery Viewer', 'wpshutter'), array(
 				    'read' 						=> true,
 				    'edit_posts' 				=> false,
 				    'delete_posts' 				=> false
 				) );
-		
+
 				// Gallery Manager
 				add_role( 'gallery_manager', __('Gallery Manager', 'wpshutter'), array(
 				    'read' 						=> true,
@@ -310,7 +310,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 					'manage_wpshutter'			=> true,
 					'manage_wpshutter_galleries' => true
 				) );
-			
+
 				// Add Gallery Capabilities for Admin
 				$wp_roles->add_cap( 'administrator', 'manage_wpshutter' );
 				$wp_roles->add_cap( 'administrator', 'manage_wpshutter_galleries' );
@@ -321,9 +321,9 @@ if ( !class_exists( 'WPShutter' ) ) :
 		 * Taxonomies
 		 */
 		function init_taxonomy() {
-		
+
 			if ( post_type_exists('wps-gallery') ) return;
-		
+
 			register_post_type( 'wps-gallery',
 				array(
 					'labels' => array(
@@ -363,85 +363,85 @@ if ( !class_exists( 'WPShutter' ) ) :
 					'exclude_from_search' 	=> false,
 					'hierarchical' 			=> false, // Hierarcal causes memory issues - WP loads all records!
 					'rewrite' 				=> array( 'slug' => 'gallery', 'with_front' => false, 'feeds' => 'shutter' ),
-					'query_var' 			=> true,			
+					'query_var' 			=> true,
 					'supports' 				=> array( 'title', 'editor', 'thumbnail' ),
 					'has_archive' 			=> 'shutter',
 					'show_in_nav_menus' 	=> true
 				)
 			);
-		
+
 		}
-	
+
 		/**
 		 * Additional Image Sizes
 		 */
 		function init_image_sizes() {
-			
+
 			$shutter_general_settings = get_option('shutter_general_settings');
-			
+
 			// Gallery Thumbnail
 			$shutter_gallery_thumb_width = ( isset($shutter_general_settings['shutter_gallery_thumb_width']) ) ? $shutter_general_settings['shutter_gallery_thumb_width'] : 300;
 			$shutter_gallery_thumb_height = ( isset($shutter_general_settings['shutter_gallery_thumb_height']) ) ? $shutter_general_settings['shutter_gallery_thumb_height'] : 300;
 			$shutter_gallery_thumb_crop = ( isset($shutter_general_settings['shutter_gallery_thumb_crop']) && $shutter_general_settings['shutter_gallery_thumb_crop'] == '1' ) ? true : false;
-			
+
 			// Gallery Lightbox
 			$shutter_gallery_lightbox_width = ( isset($shutter_general_settings['shutter_gallery_lightbox_width']) ) ? $shutter_general_settings['shutter_gallery_lightbox_width'] : 600;
 			$shutter_gallery_lightbox_height = ( isset($shutter_general_settings['shutter_gallery_lightbox_height']) ) ? $shutter_general_settings['shutter_gallery_lightbox_height'] : 9999;
 			$shutter_gallery_lightbox_crop = ( isset($shutter_general_settings['shutter_gallery_lightbox_crop']) && $shutter_general_settings['shutter_gallery_lightbox_crop'] == '1' ) ? true : false;
-			
-			
+
+
 			add_image_size( 'shutter-gallery-thumb', $shutter_gallery_thumb_width, $shutter_gallery_thumb_height, $shutter_gallery_thumb_crop );
 			add_image_size( 'shutter-gallery-lightbox', $shutter_gallery_lightbox_width, $shutter_gallery_lightbox_height, $shutter_gallery_lightbox_crop );
-			
+
 			// Custom Column Thumb
 			add_image_size( 'shutter-custom-column-thumb', 100, 100, true );
-			
+
 		}
-	
+
 		/**
 		 * Frontend CSS
 		 */
 		function init_styles() {
-			
+
 			$shutter_general_settings = get_option('shutter_general_settings');
-			
+
 			// CSS
 			$css = ( isset($shutter_general_settings['shutter_disable_css']) && $shutter_general_settings['shutter_disable_css'] == '1' ) ? false : true;
-			
+
 			if ( ( defined('WPSHUTTER_USE_CSS') && WPSHUTTER_USE_CSS ) || ( ! defined('WPSHUTTER_USE_CSS') && $css ) ) :
 				$css = file_exists( get_stylesheet_directory() . '/shutter/style.css' ) ? get_stylesheet_directory_uri() . '/shutter/style.css' : $this->plugin_url() . '/css/style.css';
 				wp_register_style( 'shutter_frontend_styles', $css );
 				wp_enqueue_style( 'shutter_frontend_styles' );
 			endif;
-			
+
 			// Lightbox
 			$lightbox = ( isset($shutter_general_settings['shutter_disable_lightbox']) && $shutter_general_settings['shutter_disable_lightbox'] == '1' ) ? false : true;
 			if ( $lightbox )
 				wp_enqueue_style( 'shutter_fancybox_styles', $this->plugin_url() . '/tools/fancybox/jquery.fancybox.css' );
 
 		}
-	
+
 		/**
 		 * Frontend Scripts
 		 */
 		function frontend_scripts() {
-			
+
 			$shutter_general_settings = get_option('shutter_general_settings');
-			
-			$scripts_position = ( isset($shutter_general_settings['shutter_javascript_position']) && $shutter_general_settings['shutter_javascript_position'] == '1' ) ? true : false;			
-			
+
+			$scripts_position = ( isset($shutter_general_settings['shutter_javascript_position']) && $shutter_general_settings['shutter_javascript_position'] == '1' ) ? true : false;
+
 			// Lightbox
 			$lightbox = ( isset($shutter_general_settings['shutter_disable_lightbox']) && $shutter_general_settings['shutter_disable_lightbox'] == '1' ) ? false : true;
-			
+
 			if ( $lightbox ) :
-				
+
 				$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 				wp_enqueue_script( 'shutter', $this->plugin_url() . '/js/global'.$suffix.'.js', array('jquery'), '1.0', $scripts_position );
 				wp_enqueue_script( 'fancybox', $this->plugin_url() . '/tools/fancybox/jquery.fancybox.js', array('jquery'), '1.0', $scripts_position );
-				
+
 			endif;
 		}
-		
+
 		// Admin Styles
 		function init_admin_styles() {
 			wp_register_style( 'shutter_admin_styles', $this->plugin_url() . '/admin/css/style.css' );
@@ -451,90 +451,90 @@ if ( !class_exists( 'WPShutter' ) ) :
 		/**
 		 * Logging
 		 */
-		function logger() { 
+		function logger() {
 		}
-	
+
 		/**
 		 * Validation
 		 */
 		function validation() {
 		}
-	
+
 		/**
 		 * Mail
 		 */
-		function mailer() { 
+		function mailer() {
 		}
 
 		// Helper Functions
-	
+
 		/**
 		 * Plugin URL
 		 */
-		function plugin_url() { 
+		function plugin_url() {
 			if ( $this->plugin_url ) return $this->plugin_url;
 			return $this->plugin_url = plugins_url( basename( plugin_dir_path(__FILE__) ), basename( __FILE__ ) );
 		}
-	
+
 		/**
 		 * Plugin Path
 		 */
-		function plugin_path() { 	
+		function plugin_path() {
 			if ( $this->plugin_path ) return $this->plugin_path;
-		
+
 			return $this->plugin_path = untrailingslashit( plugin_dir_path( __FILE__ ) );
 		}
-	 
+
 		/**
 		 * AJAX URL
 		 */
-		function ajax_url() { 
+		function ajax_url() {
 			return str_replace( array('https:', 'http:'), '', admin_url( 'admin-ajax.php' ) );
-		} 
-	 
+		}
+
 		/**
 		 * SSL URL
 		 */
-		function force_ssl( $content ) { 	
+		function force_ssl( $content ) {
 			if ( is_ssl() ) {
 				if ( is_array($content) )
 					$content = array_map( array( &$this, 'force_ssl' ) , $content );
-				else 
+				else
 					$content = str_replace( 'http:', 'https:', $content );
 			}
 			return $content;
 		}
 
 		// Messages
-    
+
 		/**
 		 * Load Messages
 		 */
 		function load_messages() {
-			
+
 			if ( isset( $_SESSION['errors'] ) ) $this->errors = $_SESSION['errors'];
 			if ( isset( $_SESSION['messages'] ) ) $this->messages = $_SESSION['messages'];
-		
+
 			unset( $_SESSION['messages'] );
 			unset( $_SESSION['errors'] );
-		
+
 			// Load Errors from Query String
 			if ( isset( $_GET['wps_error'] ) ) {
 				$this->add_error( esc_attr( $_GET['wps_error'] ) );
 			}
-			
+
 		}
 
 		/**
 		 * Add an Error
 		 */
 		function add_error( $error ) { $this->errors[] = $error; }
-	
+
 		/**
 		 * Add a Message
 		 */
 		function add_message( $message ) { $this->messages[] = $message; }
-	
+
 		/**
 		 * Clear Messages and Session
 		 */
@@ -542,32 +542,32 @@ if ( !class_exists( 'WPShutter' ) ) :
 			$this->errors = $this->messages = array();
 			unset( $_SESSION['messages'], $_SESSION['errors'] );
 		}
-	
+
 		/**
 		 * Get Error Count
 		 */
 		function error_count() { return sizeof($this->errors); }
-	
+
 		/**
 		 * Get Message Count
 		 */
 		function message_count() { return sizeof($this->messages); }
-	
+
 		/**
 		 * Get Errors
 		 */
 		function get_errors() { return (array) $this->errors; }
-	
+
 		/**
 		 * Get Messages
 		 */
 		function get_messages() { return (array) $this->messages; }
-	
+
 		/**
 		 * Output Errors and Messages
 		 */
 		function show_messages() {}
-	
+
 		/**
 		 * Set Session Data for Messages
 		 */
@@ -575,62 +575,62 @@ if ( !class_exists( 'WPShutter' ) ) :
 			$_SESSION['errors'] = $this->errors;
 			$_SESSION['messages'] = $this->messages;
 		}
-	
+
 		/**
 		 * Redirection Hook for Message Session Data
 		 */
 		function redirect( $location, $status ) {
 			global $is_IIS;
-			
+
 			$this->set_messages();
-		
+
 			// IIS fix
 			if ( $is_IIS ) session_write_close();
-		
+
 			return apply_filters( 'shutter_redirect', $location );
 		}
-	
+
 		// Nonces
-		
+
 		/**
 		 * Return a Nonce Field
 		 */
 		function nonce_field ( $action, $referer = true , $echo = true ) { return wp_nonce_field('wpshutter-' . $action, '_n', $referer, $echo ); }
-	
+
 		/**
 		 * Return a url with a nonce appended
 		 */
 		function nonce_url ( $action, $url = '' ) { return add_query_arg( '_n', wp_create_nonce( 'wpshutter-' . $action ), $url ); }
-	
+
 		/**
 		 * Check a nonce and sets shutter error in case it is invalid
 		 * To fail silently, set the error_message to an empty string
-		 * 
+		 *
 		 * @param 	string $name the nonce name
 		 * @param	string $action then nonce action
 		 * @param   string $method the http request method _POST, _GET or _REQUEST
 		 * @param   string $error_message custom error message, or false for default message, or an empty string to fail silently
-		 * 
+		 *
 		 * @return   bool
 		 */
 		function verify_nonce( $action, $method='_POST', $error_message = false ) {
-		
+
 			$name = '_n';
 			$action = 'wpshutter-' . $action;
-		
-			if ( $error_message === false ) $error_message = __('Action failed. Please refresh the page and retry.', 'wpshutter'); 
-		
+
+			if ( $error_message === false ) $error_message = __('Action failed. Please refresh the page and retry.', 'wpshutter');
+
 			if ( ! in_array( $method, array( '_GET', '_POST', '_REQUEST' ) ) ) $method = '_POST';
-		
+
 			if ( isset($_REQUEST[$name] ) && wp_verify_nonce( $_REQUEST[$name], $action ) ) return true;
-		
+
 			if ( $error_message ) $this->add_error( $error_message );
-		
+
 			return false;
 		}
-	
+
 		// Shortcodes
-	
+
 		/**
 		 * Shortcode Wrapper
 		 */
@@ -641,16 +641,16 @@ if ( !class_exists( 'WPShutter' ) ) :
 		}
 
 		// Cache
-		
+
 		/**
 		 * Prevent plugins from caching a page.
 		 */
 		function nocache() {
 			if ( ! defined('DONOTCACHEPAGE') ) define('DONOTCACHEPAGE', 'true');
 		}
-	
+
 		// Transients
-		
+
 		/**
 		 * Clear Gallery Transients
 		 */
@@ -658,30 +658,30 @@ if ( !class_exists( 'WPShutter' ) ) :
 			delete_transient('wpshutter');
 			wp_cache_flush();
 		}
-	
+
 		/**
 		 * Add Body Class
 		 */
 		function add_body_class( $class ) {
 			$this->_body_classes[] = sanitize_html_class( strtolower($class) );
 		}
-	
+
 		/**
 		 * Output Body Class
 		 */
 		function output_body_class( $classes ) {
 			if ( sizeof( $this->_body_classes ) > 0 ) $classes = array_merge( $classes, $this->_body_classes );
-		
+
 			if ( is_singular('wps-gallery') ) {
 				$key = array_search( 'singular', $classes );
 				if ( $key !== false ) unset( $classes[$key] );
 			}
-		
+
 			return $classes;
 		}
 
 	}
 
 	$GLOBALS['wpshutter'] = new WPShutter(); // All Systems Go!
-	
+
 endif;

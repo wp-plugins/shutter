@@ -13,13 +13,13 @@ function install_wpshutter() {
 }
 
 class WPShutter_Settings {
-	
+
 	private $shutter_general_settings = 'shutter_general_settings';
 	private $shutter_advanced_settings = 'shutter_advanced_settings';
 	private $shutter_regenerate_thumbnails = 'shutter_regenerate_thumbnails';
 	private $shutter_options_key = 'shutter_options';
 	private $shutter_settings_tabs = array();
-	
+
 	/*
 	 * Fired during plugins_loaded (very very early),
 	 * so don't miss-use this, only actions and filters,
@@ -32,7 +32,7 @@ class WPShutter_Settings {
 		add_action( 'admin_init', array( &$this, 'shutter_regenerate_thumbnails' ) );
 		add_action( 'admin_menu', array( &$this, 'add_admin_menus' ) );
 	}
-	
+
 	/*
 	 * Loads both the general and advanced settings from
 	 * the database into their respective arrays. Uses
@@ -40,11 +40,11 @@ class WPShutter_Settings {
 	 * missing.
 	 */
 	function load_settings() {
-		
+
 		// Get Options
 		$this->general_settings = (array) get_option( $this->shutter_general_settings );
 		$this->advanced_settings = (array) get_option( $this->shutter_advanced_settings );
-		
+
 		// Merge Default Values
 		$this->general_settings = array_merge( array(
 			'shutter_gallery_thumb_width' => '300',
@@ -57,47 +57,47 @@ class WPShutter_Settings {
 			'shutter_disable_lightbox' => '0',
 			'shutter_javascript_position' => '0'
 		), $this->general_settings );
-		
+
 		$this->advanced_settings = array_merge( array(
 			'presstrends_option' => '0'
 		), $this->advanced_settings );
 	}
-	
+
 	/*
 	 * Registers the general settings via the Settings API,
 	 * appends the setting to the tabs array of the object.
 	 */
 	function register_general_settings() {
-		
+
 		$this->shutter_settings_tabs[$this->shutter_general_settings] = __('General', 'wpshutter');
-		
+
 		register_setting( $this->shutter_general_settings, $this->shutter_general_settings );
-		
+
 		/*
 		** CSS and JavaScript
-		*/		
+		*/
 		add_settings_section( 'section_shutter_css_and_js', __('CSS & JavaScript', 'wpshutter'), array( &$this, 'section_shutter_css_and_js_desc' ), $this->shutter_general_settings );
-		
+
 		// CSS
 		add_settings_field( 'shutter_css', __('CSS', 'wpshutter'), array( &$this, 'field_shutter_css' ), $this->shutter_general_settings, 'section_shutter_css_and_js' );
-		
+
 		// JS
 		add_settings_field( 'shutter_js', __('JS', 'wpshutter'), array( &$this, 'field_shutter_js' ), $this->shutter_general_settings, 'section_shutter_css_and_js' );
-		
+
 		/*
 		** Image Sizes
-		*/		
+		*/
 		add_settings_section( 'section_shutter_image_sizes', __('Image Sizes', 'wpshutter'), array( &$this, 'section_shutter_image_sizes_desc' ), $this->shutter_general_settings );
-		
+
 		// Gallery Thumbnail Sizes
 		add_settings_field( 'shutter_gallery_thumb', __('Gallery Thumbnail', 'wpshutter'), array( &$this, 'field_shutter_gallery_thumb' ), $this->shutter_general_settings, 'section_shutter_image_sizes' );
-		
+
 		// Gallery Lightbox Sizes
 		add_settings_field( 'shutter_gallery_lightbox', __('Gallery Lightbox', 'wpshutter'), array( &$this, 'field_shutter_gallery_lightbox' ), $this->shutter_general_settings, 'section_shutter_image_sizes' );
-		
+
 	}
-	
-	// Section Descriptions 
+
+	// Section Descriptions
 	function section_shutter_image_sizes_desc() {
 		_e('Note: Please rebuild your images if you change these sizes', 'wpshutter');
 	}
@@ -106,7 +106,7 @@ class WPShutter_Settings {
 	}
 	function section_advanced_desc() { _e('', 'wpshutter'); }
 	function section_regenerate_thumbnails_desc() { _e('', 'wpshutter'); }
-	
+
 	// CSS Field
 	function field_shutter_css() {
 		?>
@@ -114,7 +114,7 @@ class WPShutter_Settings {
 		<label for="<?php echo $this->shutter_general_settings; ?>[shutter_disable_css]"><?php _e('Disable CSS styles', 'wpshutter'); ?></label>
 		<?php
 	}
-	
+
 	// JS Field
 	function field_shutter_js() {
 		?>
@@ -125,7 +125,7 @@ class WPShutter_Settings {
 		<?php
 	}
 
-	// Gallery Thumb Field 
+	// Gallery Thumb Field
 	function field_shutter_gallery_thumb() {
 		?>
 		<label for="<?php echo $this->shutter_general_settings; ?>[shutter_gallery_thumb_width]"><?php _e('Width', 'wpshutter'); ?></label>
@@ -137,7 +137,7 @@ class WPShutter_Settings {
 		<label for="<?php echo $this->shutter_general_settings; ?>[shutter_gallery_thumb_crop]"><?php _e('Hard Crop', 'wpshutter'); ?></label>
 		<?php
 	}
-	
+
 	// Gallery Lightbox Field
 	function field_shutter_gallery_lightbox() {
 		?>
@@ -150,7 +150,7 @@ class WPShutter_Settings {
 		<label for="<?php echo $this->shutter_general_settings; ?>[shutter_gallery_lightbox_crop]"><?php _e('Hard Crop', 'wpshutter'); ?></label>
 		<?php
 	}
-	
+
 	// Register Advanced Settings
 	function register_advanced_settings() {
 		$this->shutter_settings_tabs[$this->shutter_advanced_settings] = __('Advanced', 'wpshutter');
@@ -158,23 +158,23 @@ class WPShutter_Settings {
 		add_settings_section( 'section_advanced', __('Advanced Shutter Settings', 'wpshutter'), array( &$this, 'section_advanced_desc' ), $this->shutter_advanced_settings );
 		add_settings_field( 'presstrends_option', __('Opt-out of PressTrends Tracking', 'wpshutter'), array( &$this, 'field_presstrends_option' ), $this->shutter_advanced_settings, 'section_advanced' );
 	}
-	
+
 	// PressTrends
 	function field_presstrends_option() {
 		?>
 		<input type="checkbox" <?php if ( 1 == $this->advanced_settings['presstrends_option'] ) echo 'checked="checked"'; ?> value="1" name="<?php echo $this->shutter_advanced_settings; ?>[presstrends_option]" />
 		<p class="description"><a title="PressTrends" href="www.presstrends.io/privacy/" target="_blank"><?php _e('For more information, please view the PressTrends privacy policy.', 'wpshutter'); ?></a></p>
-		
+
 		<?php
 	}
-	
+
 	// Regenerate Gallery Thumbnails
 	function shutter_regenerate_thumbnails() {
 		$this->shutter_settings_tabs[$this->shutter_regenerate_thumbnails] = __('Rebuild Images', 'wpshutter');
 	}
-	
+
 	function shutter_regenerate_thumbnails_content() { ?>
-		
+
 		<div id="message" class="updated fade" style="display:none"></div>
 		<script type="text/javascript">
 		// <![CDATA[
@@ -252,9 +252,9 @@ class WPShutter_Settings {
 		</script>
 
 		<form method="post" action="" style="display:inline; float:left; padding-right:30px;">
-			
+
 			<div style="display: none;">
-			
+
 		    <h4><?php _e('Select which thumbnails you want to rebuild', 'wpshutter'); ?>:</h4>
 			<a href="javascript:void(0);" id="size-toggle"><?php _e('Toggle all', 'wpshutter'); ?></a>
 			<div id="sizeselect">
@@ -271,11 +271,11 @@ class WPShutter_Settings {
 				<br/>
 			<?php endforeach;?>
 			</div>
-			
+
 			</div>
 
 			<p><?php _e('Note: Your images will not be deleted', 'wpshutter'); ?></p>
-			
+
 			<p>
 			<input type="button" onClick="javascript:regenerate();" class="button-primary"
 			       name="ajax_thumbnail_rebuild" id="ajax_thumbnail_rebuild"
@@ -284,9 +284,9 @@ class WPShutter_Settings {
 		</form>
 
 		<div id="thumb" style="display:none;"><h4><?php _e('Last image', 'wpshutter'); ?>:</h4><img id="thumb-img" /></div>
-		
+
 	<?php }
-	
+
 	/*
 	 * Called during admin_menu, adds an options
 	 * page under Settings called My Settings, rendered
@@ -296,7 +296,7 @@ class WPShutter_Settings {
 		global $wpshutter;
 		add_submenu_page( 'edit.php?post_type=wps-gallery', __('Shutter Settings', 'wpshutter'), __('Settings', 'wpshutter'), 'manage_options', $this->shutter_options_key, array( &$this, 'plugin_options_page' ) );
 	}
-	
+
 	/*
 	 * Plugin Options page rendering goes here, checks
 	 * for active tab and replaces key with the related
@@ -307,13 +307,13 @@ class WPShutter_Settings {
 		$tab = isset( $_GET['tab'] ) ? $_GET['tab'] : $this->shutter_general_settings;
 		?>
 		<div class="wrap">
-			
+
 			<?php if( isset($_GET['settings-updated']) ) { ?>
 			    <div id="message" class="updated">
 			        <p><strong><?php _e('Your settings have been saved.', 'wpshutter') ?></strong></p>
 			    </div>
 			<?php } ?>
-			
+
 			<?php $this->plugin_options_tabs(); ?>
 			<?php if ( $tab != $this->shutter_regenerate_thumbnails ) : ?>
 			<form method="post" action="options.php">
@@ -330,7 +330,7 @@ class WPShutter_Settings {
 		</div>
 		<?php
 	}
-	
+
 	/*
 	 * Renders our tabs in the plugin options page,
 	 * walks through the object's tabs array and prints
@@ -343,7 +343,7 @@ class WPShutter_Settings {
 		echo '<h2 class="nav-tab-wrapper">';
 		foreach ( $this->shutter_settings_tabs as $tab_key => $tab_caption ) {
 			$active = $current_tab == $tab_key ? 'nav-tab-active' : '';
-			echo '<a class="nav-tab ' . $active . '" href="?post_type=wps-gallery&page=' . $this->shutter_options_key . '&tab=' . $tab_key . '">' . $tab_caption . '</a>';	
+			echo '<a class="nav-tab ' . $active . '" href="?post_type=wps-gallery&page=' . $this->shutter_options_key . '&tab=' . $tab_key . '">' . $tab_caption . '</a>';
 		}
 		echo '</h2>';
 	}

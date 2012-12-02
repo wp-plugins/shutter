@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.4
 Tested up to: 3.4.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,11 @@ A WordPress Plugin Specifically for Photographers.
 
 [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") is a plugin and a suite of add-ons to help easily manage and share your photos.
 
-Make sure to visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") for more info and [add-ons](http://wpshutter.com/add-ons/ "Shutter Add-ons").
+Visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") for more info and [add-ons](http://wpshutter.com/add-ons/ "Shutter Add-ons").
+
+= Get Involved =
+
+Shutter is an Open Source project. If you are a developer, make sure to checkout and contribute to Shutter on the [Shutter GitHub Repository](https://github.com/scottbasgaard/shutter/ "Shutter GitHub Repository").
 
 = Features include: =
 
@@ -78,6 +82,11 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 1.0.5 =
+* Remove trailing spaces
+* Add .DS_Store to .gitignore and remove any .DS_Store previously committed
+* Added link to GitHub repository in readme.txt
+
 = 1.0.4 =
 * Bugfix: Renamed PressTrends function to prevent future conflicts
 
@@ -137,6 +146,11 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+* Remove trailing spaces
+* Add .DS_Store to .gitignore and remove any .DS_Store previously committed
+* Added link to GitHub repository in readme.txt
 
 = 1.0.4 =
 * Bugfix: Renamed PressTrends function to prevent future conflicts

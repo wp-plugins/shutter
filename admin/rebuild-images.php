@@ -56,7 +56,7 @@ function shutter_thumbnail_rebuild_get_sizes() {
 		$sizes[$s]['name'] = $s;
 
 		if ( isset( $_wp_additional_image_sizes[$s]['width'] ) )
-			$sizes[$s]['width'] = intval( $_wp_additional_image_sizes[$s]['width'] ); 
+			$sizes[$s]['width'] = intval( $_wp_additional_image_sizes[$s]['width'] );
 		else
 			$sizes[$s]['width'] = get_option( "{$s}_size_w" );
 
