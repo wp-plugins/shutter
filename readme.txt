@@ -3,8 +3,8 @@ Contributors: scottbasgaard
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MFZXL72ETR7H2
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.4
-Tested up to: 3.4.1
-Stable tag: 1.0.5
+Tested up to: 3.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ Visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically
 
 = Get Involved =
 
-Shutter is an Open Source project. If you are a developer, make sure to checkout and contribute to Shutter on the [Shutter GitHub Repository](https://github.com/scottbasgaard/shutter/ "Shutter GitHub Repository").
+Shutter is an Open Source project. If you are a developer, make sure to check out and contribute to Shutter on the [Shutter GitHub Repository](https://github.com/scottbasgaard/shutter/ "Shutter GitHub Repository").
 
 = Features include: =
 
@@ -81,6 +81,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 8. Fully Responsive (Dependent on Theme)
 
 == Changelog ==
+
+= 1.0.6 =
+* WordPress 3.5 Compatibility
 
 = 1.0.5 =
 * Remove trailing spaces
@@ -146,6 +149,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.6 =
+* WordPress 3.5 Compatibility
 
 = 1.0.5 =
 * Remove trailing spaces
