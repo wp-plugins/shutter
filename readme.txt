@@ -2,9 +2,9 @@
 Contributors: scottbasgaard
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MFZXL72ETR7H2
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
-Requires at least: 3.4
-Tested up to: 3.5
-Stable tag: 1.0.6
+Requires at least: 3.5
+Tested up to: 3.5.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,6 +82,14 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 1.1 =
+* New image gallery meta box
+* Twenty Eleven/Twelve/Thirteen Support
+* Updated Fancybox
+* Added settings link from plugins page
+* Fix single gallery content wrapper
+* Update PressTrends tracking
+
 = 1.0.6 =
 * WordPress 3.5 Compatibility
 
@@ -149,6 +157,14 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.1 =
+* New image gallery meta box
+* Twenty Eleven/Twelve/Thirteen Support
+* Updated Fancybox
+* Added settings link from plugins page
+* Fix single gallery content wrapper
+* Update PressTrends tracking
 
 = 1.0.6 =
 * WordPress 3.5 Compatibility

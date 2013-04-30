@@ -295,6 +295,18 @@ class WPShutter_Settings {
 	function add_admin_menus() {
 		global $wpshutter;
 		add_submenu_page( 'edit.php?post_type=wps-gallery', __('Shutter Settings', 'wpshutter'), __('Settings', 'wpshutter'), 'manage_options', $this->shutter_options_key, array( &$this, 'plugin_options_page' ) );
+		add_filter( 'plugin_action_links_shutter/shutter.php',  array( &$this, 'filter_plugin_actions' ) );
+		
+	}
+
+	// Add "Settings" Link to Plugin on Plugins Page
+	function filter_plugin_actions ( $links ) {
+		return array_merge(
+			array(
+				'settings' => '<a href="' . admin_url( 'edit.php?post_type=wps-gallery&page=shutter_options' ) . '">' .  __('Settings', 'wpshutter') . '</a>'
+			),
+			$links
+		);
 	}
 
 	/*

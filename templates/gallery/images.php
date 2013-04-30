@@ -9,23 +9,39 @@
 <?php do_action( 'shutter_before_gallery' ); ?>
 
 <ul class="shutter-gallery">
-	<?php	
-	$attachments = get_posts( array(
-		'post_type' 	=> 'attachment',
-		'numberposts' 	=> -1,
-		'post_status' 	=> null,
-		'post_parent' 	=> $post->ID,
-		'post_mime_type'=> 'image',
-		'orderby'		=> 'menu_order',
-		'order'			=> 'ASC'
-	) );
+	<?php
+	
+
+	if ( metadata_exists( 'post', $post->ID, '_shutter_image_gallery' ) ) {
 		
+		$product_image_gallery = get_post_meta( $post->ID, '_shutter_image_gallery', true );
+		
+	} else {
+
+		$attachments = get_posts( array(
+			'post_type' 	=> 'attachment',
+			'numberposts' 	=> -1,
+			'post_status' 	=> null,
+			'post_parent' 	=> $post->ID,
+			'post_mime_type'=> 'image',
+			'orderby'		=> 'menu_order',
+			'order'			=> 'ASC',
+			'fields'		=> 'ids'
+		) );
+			
+		$product_image_gallery = implode( ',', $attachments );
+	}
+	
+	$attachments = array_filter( explode( ',', $product_image_gallery ) );
+
 	if ($attachments) {
 		
 		$loop = 0;
 		$columns = apply_filters( 'shutter_gallery_thumbnails_columns', 3 );
 		
-		foreach ( $attachments as $key => $attachment ) {
+		foreach ( $attachments as $key => $attachment_id ) {
+			
+			$attachment = get_post($attachment_id);
 			
 			$classes = array( 'shutterbox' );
 			$order = '';

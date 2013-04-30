@@ -2,8 +2,8 @@
 /*
 Plugin Name: Shutter
 Plugin URI: http://wpshutter.com/
-Description: A WordPress plugin specifically for photographers.
-Version: 1.0.6
+Description: Where Photography Meets WP
+Version: 1.1
 Author: Scott Basgaard
 Author URI: http://scottbasgaard.com/
 License: GPLv2 or later
@@ -37,7 +37,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 	class WPShutter {
 
 		// Version
-		var $version = '1.0.4';
+		var $version = '1.1';
 
 		// URLS
 		var $plugin_url;
