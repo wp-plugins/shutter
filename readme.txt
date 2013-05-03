@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.5
 Tested up to: 3.5.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,8 +36,6 @@ Display Specific Gallery
 
 Display All Galleries
 `[shutter_galleries]`
-
-All photos you see here are taken by my beautiful and talented wife, [Renate](http://renatebasgaard.com/ "Renate Basgaard"), who has inspired me to create this plugin.
 
 == Installation ==
 
@@ -84,6 +82,7 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 = 1.2 =
 * Add meta for photographer name and url
+* Updated readme.txt
 
 = 1.1 =
 * New image gallery meta box
@@ -163,6 +162,7 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 = 1.2 =
 * Add meta for photographer name and url
+* Updated readme.txt
 
 = 1.1 =
 * New image gallery meta box
