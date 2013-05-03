@@ -359,6 +359,7 @@ class WPShutter_Settings {
 		}
 		echo '</h2>';
 	}
+	
 };
 
 // Initialize the plugin
@@ -366,3 +367,4 @@ add_action( 'plugins_loaded', create_function( '', '$GLOBALS["wpshutter_settings
 
 include_once( 'admin-custom-columns.php' );
 include_once( 'admin-meta-boxes.php' );
+include_once( 'admin-media-meta.php' );

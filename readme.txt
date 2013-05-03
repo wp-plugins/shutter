@@ -82,6 +82,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 
 == Changelog ==
 
+= 1.2 =
+* Add meta for photographer name and url
+
 = 1.1 =
 * New image gallery meta box
 * Twenty Eleven/Twelve/Thirteen Support
@@ -157,6 +160,9 @@ Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/for
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2 =
+* Add meta for photographer name and url
 
 = 1.1 =
 * New image gallery meta box

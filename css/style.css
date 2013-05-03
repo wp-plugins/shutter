@@ -18,7 +18,7 @@ ul.shutter-gallery li {
 
 ul.shutter-gallery li.gallery-image {
     clear: none;
-    margin-right: 3.8%;
+	margin: 0 3.8% 1.4% 0;
     width: 30.75%;
 }
 

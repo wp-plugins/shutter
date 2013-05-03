@@ -9,12 +9,14 @@
 <ul class="shutter-gallery">
 	<?php
 
-	if ($shutter_attachments) {
+	if ( $shutter_attachments ) {
 
 		$loop = 0;
 		$columns = apply_filters( 'shutter_gallery_thumbnails_columns', 3 );
 
-		foreach ( $shutter_attachments as $key => $attachment ) {
+		foreach ( $shutter_attachments as $key => $attachment_id ) {
+			
+			$attachment = get_post($attachment_id);
 
 			$classes = array( 'shutterbox' );
 			$order = '';

@@ -26,7 +26,7 @@ class Shutter_Meta_Box {
         );
 		add_meta_box(
 			'shutter-product-images',
-			__( 'Gallery Images', 'wpshutter' ),
+			__( 'Gallery Photos', 'wpshutter' ),
 			array( &$this, 'shutter_product_images_box' ),
 			'wps-gallery',
 			'normal',
@@ -85,7 +85,7 @@ class Shutter_Meta_Box {
 
 		</div>
 		<p class="add_product_images hide-if-no-js">
-			<a href="#"><?php _e( 'Add gallery images', 'wpshutter' ); ?></a>
+			<a href="#"><?php _e( 'Add and Edit Photos', 'wpshutter' ); ?></a>
 		</p>
 		<script type="text/javascript">
 			jQuery(document).ready(function($){
@@ -111,9 +111,9 @@ class Shutter_Meta_Box {
 					// Create the media frame.
 					product_gallery_frame = wp.media.frames.downloadable_file = wp.media({
 						// Set the title of the modal.
-						title: '<?php _e( 'Add Images to Gallery', 'wpshutter' ); ?>',
+						title: '<?php _e( 'Add Photos to Gallery', 'wpshutter' ); ?>',
 						button: {
-							text: '<?php _e( 'Add to gallery', 'shutter' ); ?>',
+							text: '<?php _e( 'Add to Gallery', 'shutter' ); ?>',
 						},
 						multiple: true
 					});
@@ -134,7 +134,7 @@ class Shutter_Meta_Box {
 									<li class="image" data-attachment_id="' + attachment.id + '">\
 										<img src="' + attachment.url + '" />\
 										<ul class="actions">\
-											<li><a href="#" class="delete" title="<?php _e( 'Delete image', 'wpshutter' ); ?>"><?php _e( 'Delete', 'wpshutter' ); ?></a></li>\
+											<li><a href="#" class="delete" title="<?php _e( 'Delete photo', 'wpshutter' ); ?>"><?php _e( 'Delete', 'wpshutter' ); ?></a></li>\
 										</ul>\
 									</li>');
 							}
