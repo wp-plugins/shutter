@@ -1,5 +1,5 @@
 === Shutter ===
-Contributors: scottbasgaard
+Contributors: wp-client, scottbasgaard
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MFZXL72ETR7H2
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.5
