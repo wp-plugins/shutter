@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Shutter
-Plugin URI: http://wpshutter.com/
+Plugin URI: http://wpshutter.com
 Description: A WordPress Plugin Specifically for Photographers.
-Version: 1.2
-Author: Scott Basgaard
-Author URI: http://scottbasgaard.com/
+Version: 1.2.1
+Author: http://wpshutter.com
+Author URI: http://wpshutter.com
 License: GPLv2 or later
 */
 
@@ -37,7 +37,7 @@ if ( !class_exists( 'WPShutter' ) ) :
 	class WPShutter {
 
 		// Version
-		var $version = '1.2';
+		var $version = '1.2.1';
 
 		// URLS
 		var $plugin_url;

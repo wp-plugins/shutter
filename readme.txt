@@ -1,6 +1,5 @@
 === Shutter ===
-Contributors: wp-client, scottbasgaard
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MFZXL72ETR7H2
+Contributors: wp-client
 Tags: shutter, photography, photo, photos, picture, pictures, gallery, galleries, proof, proofs, proofing, image, images
 Requires at least: 3.5
 Tested up to: 3.5.1
@@ -14,19 +13,20 @@ A WordPress Plugin Specifically for Photographers.
 
 [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") is a plugin and a suite of add-ons to help easily manage and share your photos.
 
-Visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") for more info and [add-ons](http://wpshutter.com/add-ons/ "Shutter Add-ons").
+Visit [Shutter](http://wpshutter.com/ "Shutter - A WordPress Plugin Specifically for Photographers") for more info.
 
-= Get Involved =
+= Go Pro =
 
-Shutter is an Open Source project. If you are a developer, make sure to check out and contribute to Shutter on the [Shutter GitHub Repository](https://github.com/scottbasgaard/shutter/ "Shutter GitHub Repository").
+Shutter has changed hands, and is now in a transition from the previous format to the new Pro format. Those who purchased add-ons from the previous developer are eligible for a 50% discount on any License Level for the new Shutter.
 
-= Features include: =
+
+= PRO Features include: =
 
 * Fully Responsive (Dependent on Theme)
 * Creation of galleries with an unlimited amount of photos.
 * Control of image sizes for thumbnails and full size photos.
 * Shortcodes to embed galleries in various post types.
-* Hooks and a templating system for developers to easily extend.
+* Ability to watermark photos with either text or images
 * and more to come!
 
 = Available Shortcodes: =
@@ -45,40 +45,19 @@ Display All Galleries
 
 == Frequently Asked Questions ==
 
-= I need help! =
-
-Make sure to check out the documenation for Shutter [here](http://wpshutter.com/documentation/ "Shutter Documentation").
-
-= Do you have any add-ons for Shutter? =
-
-Sure do! Check them out [here](http://wpshutter.com/add-ons/ "Shutter Add-ons").
-
-= Why aren't my images the same size I've chosen in the settings area? =
-
-Make sure to rebuild your images if you aren't seeing any changes.
-
-= Why doesn't your plugin do this? I wish your plugin did that! =
-
-I'm definitely open for ideas! Ping me if you have and ideas/requests [here](http:scottbasgaard.com/contact/).
-
-= I love it! Where can I send you my money? =
-
-If you like my plugins feel free to donate [here](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MFZXL72ETR7H2).
-
-Need additional help? Visit the [Shutter Support Forum](http://wpshutter.com/forums/ "Shutter - A WordPress Plugin Specifically for Photographers").
+See here for full feature list: http://wpshutter.com
 
 == Screenshots ==
 
-1. List of Galleries
-2. Settings Page
-3. Example Gallery with Attached Photos
-4. Gallery Example on Front-end
-5. Gallery with "Lightbox" Feature Enabled
-6. Gallery Shortcode Back-end Example
-7. Gallery Shortcode Front-end Example
-8. Fully Responsive (Dependent on Theme)
+See here for Screenshots: http://wpshutter.com/screenshots/
 
 == Changelog ==
+
+OLD SHUTTER - the change log below refers to the Shutter plugin while updated by previous developer
+
+= 1.2.1 =
+* some fixes
+* text changes
 
 = 1.2 =
 * Add meta for photographer name and url
